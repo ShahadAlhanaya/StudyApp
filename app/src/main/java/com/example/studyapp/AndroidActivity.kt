@@ -22,7 +22,7 @@ class AndroidActivity : AppCompatActivity() {
         setContentView(R.layout.activity_android)
         title = "Android"
 
-        android_recycler_view.adapter = RecyclerViewAdapter(androidList)
+        android_recycler_view.adapter = RecyclerViewAdapter(androidList, this)
         android_recycler_view.layoutManager = LinearLayoutManager(this)
     }
 }

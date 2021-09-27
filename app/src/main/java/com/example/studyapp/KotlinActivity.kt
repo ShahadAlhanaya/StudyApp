@@ -11,10 +11,7 @@ class KotlinActivity : AppCompatActivity() {
     private val kotlinList = arrayListOf<ArrayList<String>>(
         arrayListOf("var and val", "Declaring variables.", "Detailed notes here."),
         arrayListOf("User Input", "Getting user input.", "Detailed notes here."),
-        arrayListOf(
-            "Strings",
-            "String concatenations, interpolation, and methods.",
-            "Detailed notes here."
+        arrayListOf("Strings", "String concatenations, interpolation, and methods.", "Detailed notes here."
         )
     )
 
@@ -23,7 +20,7 @@ class KotlinActivity : AppCompatActivity() {
         setContentView(R.layout.activity_kotlin)
         title = "Kotlin"
 
-        kotlin_recycler_view.adapter = RecyclerViewAdapter(kotlinList)
+        kotlin_recycler_view.adapter = RecyclerViewAdapter(kotlinList, this)
         kotlin_recycler_view.layoutManager = LinearLayoutManager(this)
     }
 
