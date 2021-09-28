@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_kotlin.*
+import androidx.recyclerview.widget.RecyclerView
 
 class KotlinActivity : AppCompatActivity() {
 
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewAdapter: RecyclerViewAdapter
     private val kotlinList = arrayListOf<ArrayList<String>>(
         arrayListOf("var and val", "Declaring variables.", "Detailed notes here."),
         arrayListOf("User Input", "Getting user input.", "Detailed notes here."),
@@ -20,8 +22,10 @@ class KotlinActivity : AppCompatActivity() {
         setContentView(R.layout.activity_kotlin)
         title = "Kotlin"
 
-        kotlin_recycler_view.adapter = RecyclerViewAdapter(kotlinList, this)
-        kotlin_recycler_view.layoutManager = LinearLayoutManager(this)
+        recyclerView = findViewById(R.id.kotlin_recycler_view)
+        recyclerViewAdapter = RecyclerViewAdapter(kotlinList, this)
+        recyclerView.adapter = recyclerViewAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
 }
